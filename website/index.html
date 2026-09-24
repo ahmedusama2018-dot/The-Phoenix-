@@ -609,33 +609,67 @@
             btn.classList.add('active'); parent.querySelector('#' + targetId).classList.add('active');
         }
     </script>
-    <style>/* ==========================================
-   إعدادات الموبايل (النسخة المتوازنة)
+    <style>
+      /* ==========================================
+   إعدادات الموبايل النهائية (دقيقة ومباشرة)
    ========================================== */
 @media (max-width: 768px) {
-  body, html { overflow-x: hidden; }
-  .container, section, main, header, footer { width: 100% !important; max-width: 100% !important; padding-left: 15px !important; padding-right: 15px !important; box-sizing: border-box !important; }
+  body, html { 
+    overflow-x: hidden !important; 
+    width: 100% !important;
+  }
+
+  /* 1. تكبير وتنسيق الهيدر واسم The Phoenix واللوجو */
+  header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 10px !important;
+  }
   
-  /* 1. تكبير اسم The Phoenix ليتناسب مع اللوجو */
-  .logo, .brand, header h1, header .logo-text { font-size: 32px !important; font-weight: 900 !important; }
+  /* استهداف النص بجوار اللوجو لتكبيره بشكل واضح */
+  header h1, header span, .logo-text, [class*="logo"] {
+    font-size: 28px !important;
+    font-weight: 900 !important;
+    display: inline-block !important;
+  }
+
+  /* 2. ضبط القائمة العلوية (الرئيسية، الكورسات، عن المعلم) لتبدو منظمة */
+  nav, header nav, .nav-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin-top: 10px !important;
+  }
   
-  /* 2. تصغير القائمة العلوية لمنع التداخل وجعلها في سطر واحد */
-  nav, .navbar { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 12px !important; }
-  nav a, header a { font-size: 16px !important; font-weight: bold !important; }
-  
-  /* 3. ضبط الأزرار لمنع انقسام الكلام لسطرين */
-  button, .btn, a.btn { font-size: 16px !important; padding: 10px 15px !important; white-space: nowrap !important; }
-  
-  /* 4. ترتيب باقي العناصر بشكل رأسي ومنسق */
-  .row, [class*="grid"], [class*="flex"] { flex-direction: column !important; gap: 15px !important; }
-  img { max-width: 100% !important; height: auto !important; }
-  .card, [class*="card"] { width: 100% !important; margin: 0 !important; }
-  
-  /* 5. ضبط النصوص والعناوين لراحة العين */
-  h1 { font-size: 24px !important; line-height: 1.5 !important; }
-  h2 { font-size: 22px !important; line-height: 1.5 !important; }
-  p, span, li { font-size: 16px !important; line-height: 1.6 !important; }
-}}
+  nav a, header a {
+    font-size: 15px !important;
+    padding: 6px 10px !important;
+    font-weight: bold !important;
+  }
+
+  /* 3. ضبط زر التواصل والأزرار الرئيسية */
+  button, .btn, a[class*="btn"] {
+    font-size: 16px !important;
+    padding: 10px 14px !important;
+    white-space: nowrap !important;
+  }
+
+  /* 4. منع أي تداخل في العناصر وتوسيع المسافات */
+  section, .container {
+    width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 5. ضبط العناوين والنصوص لتناسب الشاشة الصغيرة */
+  h1 { font-size: 24px !important; line-height: 1.4 !important; }
+  h2 { font-size: 20px !important; line-height: 1.4 !important; }
+  p, span, li { font-size: 15px !important; line-height: 1.6 !important; }
+}
 </style>
 </body>
 </html>
